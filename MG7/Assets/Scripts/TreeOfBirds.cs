@@ -8,14 +8,12 @@ public class TreeOfBirds: MonoBehaviour {
     [SerializeField] private float _interactDistance;
 
    private void Update() {
-    for (int i = 0; i < _sparrows.Length; i++) {
-        float distance = Vector3.Distance(_playerTransform.position, _sparrows[i].transform.position);
-        if (distance <= _interactDistance) {
+    float distance = Vector3.Distance(_playerTransform.position,transform.position);
+
+    if (distance <= _interactDistance) {
+        for (int i = 0; i < _sparrows.Length; i++) {
             _sparrows[i].SetActive(true);
-        }
-        else {
-            _sparrows[i].SetActive(false);
+            }
         }
     }
-   }
 }
